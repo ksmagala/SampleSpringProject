@@ -9,12 +9,15 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Customer {
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String email;
+    private String login;
+    private String password;
     private String firstname;
     private String lastname;
+    private String phone;
+
 
 }
