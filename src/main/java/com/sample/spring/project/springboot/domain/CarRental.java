@@ -3,13 +3,14 @@ package com.sample.spring.project.springboot.domain;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import java.util.Date;
 
 @Data
-@Entity
+//@Entity
 public class CarRental {
 
-
+    @OneToOne
     User renter;
     String type;
     String status;

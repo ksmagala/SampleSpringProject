@@ -13,5 +13,6 @@ public interface CarService {
     Boolean deleteCar(String carId);
     Car changeStatusCar(String  carId, String status);
     Car getCar(String carId);
-
+    Boolean reserveCar(String carId);
+    Boolean freeCar(String carId);
 }
