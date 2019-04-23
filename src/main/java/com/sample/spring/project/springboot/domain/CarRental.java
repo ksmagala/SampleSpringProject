@@ -2,12 +2,12 @@ package com.sample.spring.project.springboot.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import javax.persistence.OneToOne;
 import java.util.Date;
 
 @Data
-//@Entity
+@Embeddable
 public class CarRental {
 
     @OneToOne

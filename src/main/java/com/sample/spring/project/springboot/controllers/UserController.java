@@ -23,8 +23,8 @@ public class UserController {
         return userService.findAllUsers();
     }
 
-    @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id){ return userService.findUserById(id);  }
+    //@GetMapping("/{id}")
+    //public User getUserById(@PathVariable Long id){ return userService.findUserById(id);  }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

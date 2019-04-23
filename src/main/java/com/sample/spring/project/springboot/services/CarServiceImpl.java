@@ -27,7 +27,9 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> getCarsByStatus(String status) {
         if (!status.isEmpty() && status != null) {
-            return carRepository.findByStatusCar(status);
+            //TODO
+            // return carRepository.findByStatusCar(status);
+            return carRepository.findAll();
         } else
             throw new EmptyParameterException("Status is empty");
     }
