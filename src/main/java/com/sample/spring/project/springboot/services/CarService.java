@@ -7,12 +7,20 @@ import java.util.List;
 public interface CarService {
 
     List<Car> getAllCars();
+
     List<Car> getCarsByStatus(String status);
+
     Car addCar(Car car);
+
     Car updateCar(Car car);
+
     Boolean deleteCar(String carId);
-    Car changeStatusCar(String  carId, String status);
+
+    Car changeStatusCar(String carId, String status);
+
     Car getCar(String carId);
+
     Boolean reserveCar(String carId);
+
     Boolean freeCar(String carId);
 }

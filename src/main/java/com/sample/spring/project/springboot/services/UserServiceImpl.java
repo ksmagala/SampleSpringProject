@@ -91,9 +91,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean returnRentCar(String userId, String carId) {
-        if(!userId.isEmpty() && userId != null && !carId.isEmpty() && carId != null){
+        if (!userId.isEmpty() && userId != null && !carId.isEmpty() && carId != null) {
             User tempUser = userRepository.findById(userId)
-                    .orElseThrow(()-> new UserDoesNotExistException("Not exist user: " + userId));
+                    .orElseThrow(() -> new UserDoesNotExistException("Not exist user: " + userId));
             Car car = carService.getCar(carId);
             car.getCarRentalList().stream()
                     .filter(carRental -> carRental.getRenter().getEmail().equals(userId)
@@ -104,5 +104,23 @@ public class UserServiceImpl implements UserService {
             return true;
         } else
             throw new EmptyParameterException("userId/carId is empty");
+    }
+
+    @Override
+    public User changeUserStatus(String userId, String status) {
+        if (!userId.isEmpty() && userId != null && !status.isEmpty() && status != null) {
+            User tempUser = userRepository.findById(userId)
+                    .orElseThrow(() -> new UserDoesNotExistException("Not exist user: " + userId));
+            tempUser.setStatus(status);
+            return userRepository.save(tempUser);
+        } else
+            throw new EmptyParameterException("UserId/status is empty");
+    }
+
+    @Override
+    public boolean makePayment(String rentalId) {
+        //TODO
+        return false;
+
     }
 }
